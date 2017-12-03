@@ -1,0 +1,30 @@
+<div class="container mt_20">
+    <div class="row mt_20">
+        <div class="col-xs-12">
+            <canvas #myCanvas width="700" height="500"></canvas>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            <input type="date" class="input input-form" [(ngModel)]="startDate">
+        </div>
+        <div class="col-xs-3">
+            <input type="date" class="input input-form" [(ngModel)]="endDate">
+        </div>
+        <div class="col-xs-12">
+            <span class="text-danger" *ngIf="invalidDate">Please provide valid start and end date</span>
+        </div>
+    </div>
+
+    <div class="row mt_20">
+        <div class="col-xs-3">
+            <button class="btn btn-primary" (click)="GetInitialData()">Get initial data </button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-primary" [disabled]="startStreaming" (click)="startStream()">Start Streaming</button>
+        </div>
+        <div class="col-xs-3">
+            <button class="btn btn-primary" [disabled]="!startStreaming" (click)="endStream()">End Streaming</button>
+        </div>
+    </div>
+</div>
